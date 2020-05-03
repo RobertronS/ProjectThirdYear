@@ -1,0 +1,101 @@
+﻿<!DOCTYPE html>
+<html style="overflow: hidden;" lang="en">
+<head>
+    
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Area Chart - Datetime X-Axis</title>
+
+    <link href="../../assets/styles.css" rel="stylesheet" />
+
+    <style>
+      
+        #chart {
+        max-width: 650px;
+        margin: 35px auto;
+      }
+    
+      .toolbar {
+        margin-left: 45px;
+      }
+    
+      button {
+        background: #fff;
+        color: #222;
+        border: 1px solid #e7e7e7;
+        border-bottom: 2px solid #ddd;
+        border-radius: 2px;
+        padding: 4px 17px;
+      }
+    
+      button.active {
+        color: #fff;
+        background: #008FFB;
+        border: 1px solid blue;
+        border-bottom: 2px solid blue;
+      }
+    
+      button:focus {
+        outline: 0;
+      }
+      
+    </style>
+
+    <script>
+      window.Promise ||
+        document.write(
+          '<script src="https://cdn.jsdelivr.net/npm/promise-polyfill@8/dist/polyfill.min.js"><\/script>'
+        )
+      window.Promise ||
+        document.write(
+          '<script src="https://cdn.jsdelivr.net/npm/eligrey-classlist-js-polyfill@1.2.20171210/classList.min.js"><\/script>'
+        )
+      window.Promise ||
+        document.write(
+          '<script src="https://cdn.jsdelivr.net/npm/findindex_polyfill_mdn"><\/script>'
+        )
+    </script>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue-apexcharts"></script>
+    
+    <script src="../Resources/Apis/Proxy.js" cwidget="Trend1"></script>
+    
+    <title>Trend1</title>
+</head>
+<body>
+
+   <div id="app">
+      <div id="chart">
+      <div class="toolbar">   
+        
+        <button id="Customized"
+            @click="updateData('Customized')" :class="{active: selection==='Customized'}"
+            >
+          Customized
+        </button>
+        
+        <button id="all"
+            @click="updateData('all')" :class="{active: selection==='all'}"
+            >
+          ALL
+        </button>
+      </div>
+    
+      <div id="chart-timeline">
+      <apexchart type="area" height="350" ref="chart" :options="chartOptions" :series="series"></apexchart>
+    </div>
+    </div>
+    </div>  
+    
+    
+    <script src="./custom_widget.js"></script>
+    //<script>
+    
+    //</script>
+
+</body>
+</html>
