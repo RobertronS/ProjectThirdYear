@@ -137,6 +137,7 @@ function myFetch(){
 
 }//Here myFetch closes
 
-myFetch();
+document.getElementById("myBtn").addEventListener("click", myFetch);
+//myFetch();
 	
     

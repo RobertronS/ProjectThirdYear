@@ -26,7 +26,8 @@ module.exports = async () => {
 			return {x : item.TagTimeStamp, y : item.Value };
 		});
 	var mySecondData = lres.map(function(item) { // with this function I am adjusting the data to create the chart
-			return [new Date(item.TagTimeStamp).getUnixTime(), item.Value];
+			 return [new Date(item.TagTimeStamp).getUnixTime(), item.Value];
+			  
 		});
 		
 	//console.log(lres);
@@ -36,6 +37,7 @@ module.exports = async () => {
         suka = [{"x": new Date("2019-10-04T22:00:00.000Z"),"y":5},{"x": new Date("2019-10-04T22:00:00.830Z"),"y":6}];
         console.log(mySecondData[0][0])
         return mySecondData;
+	//return mySecondData[0];
     } catch (err) {
         console.log(err);
         return { hello: "world" };
