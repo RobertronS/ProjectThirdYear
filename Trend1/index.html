@@ -6,7 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Area Chart - Datetime X-Axis</title>
-
+    <title>Modal</title>
+    <link href="./Vanilla-JavaScript-Modal-master/styles2.css" rel="stylesheet"/>
+    <script defer src="./Vanilla-JavaScript-Modal-master/script.js"></script>
+	
     <link href="../../assets/styles.css" rel="stylesheet" />
 
     <style>
@@ -66,7 +69,33 @@
     
     <title>Trend1</title>
 </head>
+
+
 <body>
+
+<body>
+<div id="parent1">
+  <button data-modal-target="#modal">TimeLimits</button>
+</div>
+
+  <div class="modal" id="modal">
+    <div class="modal-header">
+      <div class="title">TimeBounds</div>
+      <button data-close-button class="close-button">&times;</button>
+    </div>
+    <div class="modal-body">
+     <form action="http://localhost:5000/:123-:3213" method="POST"/>
+  		<label for="fname">LowerBound:</label><br> 
+  		<input type="datetime-local" name="timestamp" step="1" id="lower"/><br>
+		<label for="fname">UpperBound:</label><br> 
+        	<input type="datetime-local" name="timestamp2" step="1" id="upper"/>		
+  		<!--<button onclick="getDateTime();">Confirm</button>-->	
+		<button type="submit">Confirm</button>  	
+	</form>
+    </div>
+  </div>
+  <div id="overlay"></div>
+</body>
 
    <div id="app">
       <div id="chart">
@@ -75,15 +104,16 @@
         <button id="Customized"
             @click="updateData('Customized')" :class="{active: selection==='Customized'}"
             >
-          Customized
+          HideButtons
         </button>
         
         <button id="all"
             @click="updateData('all')" :class="{active: selection==='all'}"
             >
-          ALL
+          all
         </button>
-	<button id="myBtn">UpdateChart</button>
+	<!--<button id="myBtn">UpdateChart</button>-->
+	<button type="submit"  onClick="refreshPage()">UpdateChart</button>	
       </div>
     
       <div id="chart-timeline">
@@ -94,9 +124,15 @@
     
     
     <script src="./custom_widget.js"></script>
-    //<script>
-    
-    //</script>
+    <script src="D:\Roberto\SixthSemester\Project\BackEndRG\backend\data.js"></script>
+
+    <script>
+	function refreshPage(){
+    	    window.location.reload();
+	}
+	
+
+    </script>
 
 </body>
 </html>
