@@ -1,28 +1,29 @@
 ﻿<!DOCTYPE html>
 <html style="overflow: hidden;" lang="en">
-<head>
-    
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Area Chart - Datetime X-Axis</title>
     <title>Modal</title>
-    <link href="./Vanilla-JavaScript-Modal-master/styles2.css" rel="stylesheet"/>
+    <link
+      href="./Vanilla-JavaScript-Modal-master/styles2.css"
+      rel="stylesheet"
+    />
     <script defer src="./Vanilla-JavaScript-Modal-master/script.js"></script>
-	
+
     <link href="../../assets/styles.css" rel="stylesheet" />
 
     <style>
-      
-        #chart {
+      #chart {
         max-width: 650px;
         margin: 35px auto;
       }
-    
+
       .toolbar {
         margin-left: 45px;
       }
-    
+
       button {
         background: #fff;
         color: #222;
@@ -31,107 +32,111 @@
         border-radius: 2px;
         padding: 4px 17px;
       }
-    
+
       button.active {
         color: #fff;
-        background: #008FFB;
+        background: #008ffb;
         border: 1px solid blue;
         border-bottom: 2px solid blue;
       }
-    
+
       button:focus {
         outline: 0;
       }
-      
     </style>
 
     <script>
       window.Promise ||
-        document.write(
-          '<script src="./resources/resources1.js"><\/script>'
-        )
+        document.write('<script src="./resources/resources1.js"><\/script>');
       window.Promise ||
-        document.write(
-          '<script src="./resources/resources2.js"><\/script>'
-        )
+        document.write('<script src="./resources/resources2.js"><\/script>');
       window.Promise ||
-        document.write(
-          '<script src="./resources/resources3.js"><\/script>'
-        )
+        document.write('<script src="./resources/resources3.js"><\/script>');
     </script>
 
-    
     <script src="./resources/resources4.js"></script>
     <script src="./resources/resources5.js"></script>
     <script src="./resources/resources6.js"></script>
-    
+
     <script src="../Resources/Apis/Proxy.js" cwidget="Trend1"></script>
-    
+
     <title>Trend1</title>
-</head>
+  </head>
 
-
-<body>
-
-<body>
-<div id="parent1">
-  <button data-modal-target="#modal">TimeLimits</button>
-</div>
-
-  <div class="modal" id="modal">
-    <div class="modal-header">
-      <div class="title">TimeBounds</div>
-      <button data-close-button class="close-button">&times;</button>
-    </div>
-    <div class="modal-body">
-     <form method="POST" onsubmit="submitRange()"/>
-  		<label for="fname">LowerBound:</label><br> 
-  		<input type="datetime-local" name="timestamp" step="1" id="lower"/><br>
-		<label for="fname">UpperBound:</label><br> 
-        	<input type="datetime-local" name="timestamp2" step="1" id="upper"/>		
-  		<!--<button onclick="getDateTime();">Confirm</button>-->	
-		<button type="submit">Confirm</button>  	
-	</form>
-    </div>
-  </div>
-  <div id="overlay"></div>
-</body>
-
-   <div id="app">
-      <div id="chart">
-      <div class="toolbar">   
-        
-        <button id="Customized"
-            @click="updateData('Customized')" :class="{active: selection==='Customized'}"
-            >
-          HideButtons
-        </button>
-        
-        <button id="all"
-            @click="updateData('all')" :class="{active: selection==='all'}"
-            >
-          all
-        </button>
-	<!--<button id="myBtn">UpdateChart</button>-->
-	<button type="submit"  onClick="refreshPage()">UpdateChart</button>	
+  <body>
+    <body>
+      <div id="parent1">
+        <button data-modal-target="#modal">TimeLimits</button>
       </div>
-    
-      <div id="chart-timeline">
-      <apexchart type="area" height="350" ref="chart" :options="chartOptions" :series="series"></apexchart>
+
+      <div class="modal" id="modal">
+        <div class="modal-header">
+          <div class="title">TimeBounds</div>
+          <button data-close-button class="close-button">&times;</button>
+        </div>
+        <div class="modal-body">
+          <div>
+            <label for="fname">LowerBound:</label><br />
+            <input
+              type="datetime-local"
+              name="timestamp"
+              step="1"
+              id="lower"
+            /><br />
+            <label for="fname">UpperBound:</label><br />
+            <input
+              type="datetime-local"
+              name="timestamp2"
+              step="1"
+              id="upper"
+            />
+            <button class="submitter">Cmnfirm</button>
+          </div>
+        </div>
+      </div>
+      <div id="overlay"></div>
+    </body>
+
+    <div id="app">
+      <div id="chart">
+        <div class="toolbar">
+          <button
+            id="Customized"
+            @click="updateData('Customized')"
+            :class="{active: selection==='Customized'}"
+          >
+            HideButtons
+          </button>
+
+          <button
+            id="all"
+            @click="updateData('all')"
+            :class="{active: selection==='all'}"
+          >
+            all
+          </button>
+          <!--<button id="myBtn">UpdateChart</button>-->
+          <button type="submit" onClick="refreshPage()">UpdateChart</button>
+        </div>
+
+        <div id="chart-timeline">
+          <apexchart
+            type="area"
+            height="350"
+            ref="chart"
+            :options="chartOptions"
+            :series="series"
+          ></apexchart>
+        </div>
+      </div>
     </div>
-    </div>
-    </div>  
-    
-    
+
     <script src="./custom_widget.js"></script>
 
     <script>
-	function refreshPage(){
-    	    window.location.reload();
-	}
-	
-
+      function refreshPage() {
+        window.location.reload();
+      }
     </script>
-
-</body>
+  </body>
 </html>

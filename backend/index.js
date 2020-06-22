@@ -10,23 +10,21 @@ const app = express();
 
 app.use(cors());
 
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get("/", async (req, res) => {
   const data = await getData();
-  return res.send(data);
+  return res.send({ hello: "world" });
 });
 
 //Here the other server to receive the data from the frontend
 app.post("/range", async (req, res) => {
   const { timestamp, timestamp2 } = req.body;
-  //const todin = new Date(timestamp).toISOString();
-  /const tdva = new Date(timestamp2).toISOString();
-  console.log(timestamp, timestamp2);
-  const data = await getDataWithLimits(timestamp, timestamp2 );
+  const data = await getDataWithLimits(timestamp, timestamp2);
   return res.send(data);
 });
 
 app.listen(5000, () => console.log("listening on port 5000"));
- 
+
 module.exports = app;
