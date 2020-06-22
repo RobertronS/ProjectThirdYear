@@ -21,6 +21,7 @@ app.get("/", async (req, res) => {
 //Here the other server to receive the data from the frontend
 app.post("/range", async (req, res) => {
   const { timestamp, timestamp2 } = req.body;
+  console.log(timestamp, timestamp2);
   const data = await getDataWithLimits(timestamp, timestamp2);
   return res.send(data);
 });
