@@ -84,7 +84,7 @@
       <button data-close-button class="close-button">&times;</button>
     </div>
     <div class="modal-body">
-     <form action="http://localhost:5000/:123-:3213" method="POST"/>
+     <form method="POST" onsubmit="submitRange()"/>
   		<label for="fname">LowerBound:</label><br> 
   		<input type="datetime-local" name="timestamp" step="1" id="lower"/><br>
 		<label for="fname">UpperBound:</label><br> 
@@ -124,7 +124,6 @@
     
     
     <script src="./custom_widget.js"></script>
-    <script src="D:\Roberto\SixthSemester\Project\BackEndRG\backend\data.js"></script>
 
     <script>
 	function refreshPage(){
