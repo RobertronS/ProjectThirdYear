@@ -16,8 +16,8 @@
 //it's for the properties and other features that you configure in the program.
 
 const submitRange = async () => {
-  const timestamp = document.querySelector("#lower");
-  const timestamp2 = document.querySelector("#upper");
+  const timestamp = document.querySelector("#lower").value;
+  const timestamp2 = document.querySelector("#upper").value;
 
   await fetch("http://localhost:5000/range", {
     method: "POST",
