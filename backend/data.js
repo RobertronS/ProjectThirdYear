@@ -29,7 +29,7 @@ const getData = async () => {
     var mySecondData = lres.map(function (item) {
       return [new Date(item.TagTimeStamp).getUnixTime(), item.Value];
     });
-
+    
     return mySecondData;
   } catch (err) {
     console.log(err);

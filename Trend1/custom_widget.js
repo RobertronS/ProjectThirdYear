@@ -74,7 +74,7 @@ const populateChart = (data) => {
         },
         xaxis: {
           type: "datetime",
-          min: new Date("01 Mar 2012").getTime(),
+          min: new Date("05 Oct 2019").getTime(),
           tickAmount: 6,
         },
         tooltip: {
@@ -149,3 +149,6 @@ function myFetch() {
 }
 
 myFetch();
+function refreshPage() {
+        window.location.reload();
+}
