@@ -148,7 +148,22 @@ function myFetch() {
     });
 }
 
-myFetch();
+//myFetch();
 function refreshPage() {
         window.location.reload();
+}
+
+function myHidingFunction() {  
+  var x = document.getElementById("morehd");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+  var c = document.getElementById("parent1");
+  if (c.style.display === "none") {
+    c.style.display = "block";
+  } else {
+    c.style.display = "none";
+  }
 }

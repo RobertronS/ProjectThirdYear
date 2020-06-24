@@ -3,7 +3,11 @@
 }
 #parent1 {
   position: absolute;
-  margin-left: 510px;  
+  margin-left: 450px;  
+}
+#loca {
+  position: absolute;
+  margin-left: 100px;  
 }
 .modal {
   position: fixed;

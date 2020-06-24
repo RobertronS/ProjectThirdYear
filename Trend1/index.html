@@ -64,10 +64,12 @@
   </head>
 
   <body>
-    <body>
       <div id="parent1">
         <button data-modal-target="#modal">TimeLimits</button>
+        
       </div>
+
+      <button onclick="myHidingFunction()" id="loca">HideButtons</button>
 
       <div class="modal" id="modal">
         <div class="modal-header">
@@ -91,32 +93,45 @@
               id="upper"
             />
             <button class="submitter">Update</button>
+            
           </div>
         </div>
       </div>
       <div id="overlay"></div>
+     
     </body>
 
-    <div id="app">
-      <div id="chart">
-        <div class="toolbar">
-          <button
-            id="Customized"
-            @click="updateData('Customized')"
-            :class="{active: selection==='Customized'}"
-          >
-            HideButtons
-          </button>
+    
 
-          <button
+	
+    <div id="app">
+      
+      <div id="chart">
+	
+        <div class="toolbar" id="morehd">
+	
+          <!--<button-->
+            <!--id="Customized"-->
+            <!--@click="updateData('Customized')"-->
+            <!--:class="{active: selection==='Customized'}"-->
+          <!-- > -->
+            <!--HideButtons-->
+          <!--</button>-->
+	   <body>
+         <button
             id="all"
             @click="updateData('all')"
             :class="{active: selection==='all'}"
           >
             all
           </button>
+
+
+
+
+          
           <!--<button id="myBtn">UpdateChart</button>-->
-          <button type="submit" onClick="refreshPage()">Restart</button>
+          <button type="submit" onClick="refreshPage()" id="myRestart">Restart</button>
         </div>
 
         <div id="chart-timeline">
