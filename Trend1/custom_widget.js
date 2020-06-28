@@ -125,7 +125,6 @@ document
   .addEventListener("click", () => submitRange());
 
 const submitRange = async () => {
-  console.log("here");
   const timestamp = document.querySelector("#lower").value;
   const timestamp2 = document.querySelector("#upper").value;
   console.log(timestamp, timestamp2);
@@ -139,7 +138,7 @@ const submitRange = async () => {
     body: JSON.stringify({ timestamp, timestamp2 }),
     mode: "cors",
   }).then((response) => response.json());
-  populateChart(data);
+  populateChart(data, true);
 };
 
 function myFetch() {
