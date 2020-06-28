@@ -12,8 +12,12 @@
 
 //});
 
-const populateChart = (data) => {
+const populateChart = (data, reset = false) => {
   console.log(data);
+  if (reset) {
+    const node = document.querySelector("#app");
+    node.remove();
+  }
   new Vue({
     el: "#app",
     components: {
@@ -150,10 +154,10 @@ function myFetch() {
 
 //myFetch();
 function refreshPage() {
-        window.location.reload();
+  window.location.reload();
 }
 
-function myHidingFunction() {  
+function myHidingFunction() {
   var x = document.getElementById("morehd");
   if (x.style.display === "none") {
     x.style.display = "block";
