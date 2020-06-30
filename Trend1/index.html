@@ -65,34 +65,36 @@
 
   <body>
       <div id="parent1">
-        <button data-modal-target="#modal">TimeLimits</button>
+        <button data-modal-target="#modal">Custom Chart</button>
         
       </div>
 
-      <button onclick="myHidingFunction()" id="loca">HideButtons</button>
+      <button onclick="myHidingFunction()" id="hide">Hide Buttons</button>
 
       <div class="modal" id="modal">
         <div class="modal-header">
-          <div class="title">TimeBounds</div>
+          <div class="title">Time Bounds</div>
           <button data-close-button class="close-button">&times;</button>
         </div>
         <div class="modal-body">
           <div>
-            <label for="fname">LowerBound:</label><br />
+            <label for="fname">Lower Bound:</label><br />
             <input
               type="datetime-local"
               name="timestamp"
               step="1"
               id="lower"
             /><br />
-            <label for="fname">UpperBound:</label><br />
+            <label for="fname">Upper Bound:</label><br />
             <input
               type="datetime-local"
               name="timestamp2"
               step="1"
               id="upper"
             />
-            <button class="submitter">Update</button>
+            <button class="submitter" style="background-color: #4CAF50; color: white;" 
+               >Generate Chart
+            </button>
             
           </div>
         </div>
@@ -110,25 +112,32 @@
 	
         <div class="toolbar" id="morehd">
 	
-          <!--<button-->
-            <!--id="Customized"-->
-            <!--@click="updateData('Customized')"-->
-            <!--:class="{active: selection==='Customized'}"-->
-          <!-- > -->
-            <!--HideButtons-->
-          <!--</button>-->
-	   <body>
+          <!--
+            <button
+            id="Customized"
+            @click="updateData('Customized')"
+            :class="{active: selection==='Customized'}"
+           > 
+            HideButtons
+          </button>
+           -->
+	   
+         <button type="submit" onClick="fetchAllData()" id="myRestart"
+             style="background-color: #008CBA; color: white;"
+             >Full Chart
+          </button>
+		<!--
          <button
             id="all"
             @click="updateData('all')"
             :class="{active: selection==='all'}"
           >
-            all
+            Show All Data
           </button>
 
-          
+          -->
           <!--<button id="myBtn">UpdateChart</button>-->
-          <button type="submit" onClick="refreshPage()" id="myRestart">Restart</button>
+          
         </div>
 
         <div id="chart-timeline">

@@ -146,7 +146,8 @@ const submitRange = async () => {
   populateChart(data);
 };
 
-function myFetch() {
+function fetchAllData() {
+  refreshPage();
   fetch("http://localhost:5000/")
     .then((response) => {
       return response.json();
@@ -156,7 +157,7 @@ function myFetch() {
     });
 }
 
-myFetch();
+//fetchAllData();
 
 function refreshPage() {
   const chartTimelineNode = document.querySelector("#chart-timeline");
