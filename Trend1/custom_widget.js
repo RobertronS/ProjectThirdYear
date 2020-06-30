@@ -12,10 +12,12 @@
 
 //});
 
+
+
 const populateChart = (data, reset = false) => {
   console.log(data);
   if (reset) {
-    const node = document.querySelector("#app");
+    const node = document.querySelector("#chart-timeline");
     node.remove();
   }
   new Vue({
@@ -38,6 +40,11 @@ const populateChart = (data, reset = false) => {
             autoScaleYaxis: true,
           },
         },
+        /*Annotations works in order to 
+          put markers in horizontal and vertical values 
+          of the graph
+        */
+        /*
         annotations: {
           yaxis: [
             {
@@ -68,7 +75,7 @@ const populateChart = (data, reset = false) => {
               },
             },
           ],
-        },
+        }, */
         dataLabels: {
           enabled: false,
         },
@@ -78,9 +85,10 @@ const populateChart = (data, reset = false) => {
         },
         xaxis: {
           type: "datetime",
-          min: new Date("05 Oct 2019").getTime(),
+          //min: new Date("01 Oct 2019").getTime(),
           tickAmount: 6,
         },
+        
         tooltip: {
           x: {
             format: "dd MMM yyyy",
@@ -104,12 +112,14 @@ const populateChart = (data, reset = false) => {
         this.selection = timeline;
 
         switch (timeline) {
+          /*
           case "Customized":
             this.$refs.chart.zoomX(
               new Date("05 Oct 2019").getTime(),
               new Date("06 Oct 2019").getTime()
             );
             break;
+          */
           case "all":
             this.$refs.chart.zoomX(data[0][0], data[data.length - 1][0]);
             break;
@@ -138,7 +148,8 @@ const submitRange = async () => {
     body: JSON.stringify({ timestamp, timestamp2 }),
     mode: "cors",
   }).then((response) => response.json());
-  populateChart(data, true);
+  populateChart(data, false);
+  
 };
 
 function myFetch() {
@@ -153,8 +164,14 @@ function myFetch() {
 
 //myFetch();
 function refreshPage() {
-  window.location.reload();
+  //window.location.reload();
+  const node = document.querySelector("#chart-timeline");
+  node.remove();
+  //document.getElementById("chart").appendChild(node);
+  
+  
 }
+
 
 function myHidingFunction() {
   var x = document.getElementById("morehd");
