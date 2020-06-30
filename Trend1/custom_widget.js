@@ -132,6 +132,7 @@ const submitRange = async () => {
   const timestamp = document.querySelector("#lower").value;
   const timestamp2 = document.querySelector("#upper").value;
   console.log(timestamp, timestamp2);
+  refreshPage();
 
   const data = await fetch("http://localhost:5000/range", {
     method: "POST",
@@ -142,7 +143,6 @@ const submitRange = async () => {
     body: JSON.stringify({ timestamp, timestamp2 }),
     mode: "cors",
   }).then((response) => response.json());
-  refreshPage();
   populateChart(data);
 };
 
@@ -157,9 +157,9 @@ function myFetch() {
 }
 
 myFetch();
+
 function refreshPage() {
   const apexchartNode = document.querySelector("#chart-timeline > apexchart");
-  apexchartNode.remove();
   const chartTimelineNode = document.querySelector("#chart-timeline");
 
   let newApexChart = document.createElement("apexchart");
