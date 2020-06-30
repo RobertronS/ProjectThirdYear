@@ -12,14 +12,8 @@
 
 //});
 
-
-
-const populateChart = (data, reset = false) => {
+const populateChart = (data) => {
   console.log(data);
-  if (reset) {
-    const node = document.querySelector("#chart-timeline");
-    node.remove();
-  }
   new Vue({
     el: "#app",
     components: {
@@ -88,7 +82,7 @@ const populateChart = (data, reset = false) => {
           //min: new Date("01 Oct 2019").getTime(),
           tickAmount: 6,
         },
-        
+
         tooltip: {
           x: {
             format: "dd MMM yyyy",
@@ -148,8 +142,8 @@ const submitRange = async () => {
     body: JSON.stringify({ timestamp, timestamp2 }),
     mode: "cors",
   }).then((response) => response.json());
-  populateChart(data, true);
-  
+  refreshPage();
+  populateChart(data);
 };
 
 function myFetch() {
@@ -164,14 +158,19 @@ function myFetch() {
 
 myFetch();
 function refreshPage() {
-  //window.location.reload();
-  const node = document.querySelector("#chart-timeline");
-  node.remove();
-  //document.getElementById("chart").appendChild(node);
-  
-  
-}
+  const apexchartNode = document.querySelector("apexchart");
+  apexchartNode.remove();
+  const chartTimelineNode = document.querySelector("#chart-timeline");
 
+  let newApexChart = document.createElement("apexchart");
+  newApexChart.setAttribute("type", "area");
+  newApexChart.setAttribute("height", "350");
+  newApexChart.setAttribute("ref", "chart");
+  newApexChart.setAttribute(":options", "chartOptions");
+  newApexChart.setAttribute(":series", "series");
+
+  chartTimelineNode.appendChild(newApexChart);
+}
 
 function myHidingFunction() {
   var x = document.getElementById("morehd");
