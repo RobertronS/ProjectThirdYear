@@ -148,7 +148,7 @@ const submitRange = async () => {
     body: JSON.stringify({ timestamp, timestamp2 }),
     mode: "cors",
   }).then((response) => response.json());
-  populateChart(data, false);
+  populateChart(data, true);
   
 };
 
@@ -162,7 +162,7 @@ function myFetch() {
     });
 }
 
-//myFetch();
+myFetch();
 function refreshPage() {
   //window.location.reload();
   const node = document.querySelector("#chart-timeline");

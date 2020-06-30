@@ -13,11 +13,11 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-//app.get("/", async (req, res) => {
-  //const data = await getData();
+app.get("/", async (req, res) => {
+    const data = await getData();
   //return res.send({ hello: "world" });
-  //return res.send(data);
-//});
+    return res.send(data);
+});
 
 //Here the other server to receive the data from the frontend
 app.post("/range", async (req, res) => {
