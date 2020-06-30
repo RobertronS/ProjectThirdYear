@@ -158,7 +158,7 @@ function myFetch() {
 
 myFetch();
 function refreshPage() {
-  const apexchartNode = document.querySelector("apexchart");
+  const apexchartNode = document.querySelector("#chart-timeline > apexchart");
   apexchartNode.remove();
   const chartTimelineNode = document.querySelector("#chart-timeline");
 
