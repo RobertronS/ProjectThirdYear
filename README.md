@@ -1,2 +1,5 @@
 # Web Trend Control for Edge HMI
-It is necessary to download the npm, pm2, and mssql Node.js modules to run the backend. The backend extracts data from a Microsoft SQL database This is the current workable verstion of the project. The data is finally correctly fetched. The line Chart works only by running the index.html file in the folder Trend1. However to run it, it would be necessary to have the data from the IMETDB database. Features remaining to be applied: Set Time limits and update.
+This is an application which generates a chart line based on data extracted from a Microsoft SQL database.  The backend extracts data from a Microsoft SQL database and sends the data to the frontend (contained in the folder TrendLine) as an input to generate the chart. This is the current workable version of the project. The data is correctly fetched upon request of the user. The line Chart works only by running the index.html file in the folder TrendLine or inside the program ITEH v8.1 InTouch Edge HMI by means of a Custom Widget (CW). The data to generate the chart is retrieved from the IMETDB database of the company Schneider Electric. 
+
+## Instructions.
+The Instructions to run the project can be found in the Documentation/README.pdf file of the current project.

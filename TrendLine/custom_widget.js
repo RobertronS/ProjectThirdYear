@@ -12,6 +12,7 @@
 
 //});
 
+//Function populateChart to generate the chart
 const populateChart = (data) => {
   console.log(data);
   new Vue({
@@ -124,6 +125,8 @@ const populateChart = (data) => {
   });
 };
 
+//When the function submitRange is called, then only requested data is pulled from
+//the database
 document
   .querySelector(".submitter")
   .addEventListener("click", () => submitRange());
@@ -146,6 +149,8 @@ const submitRange = async () => {
   populateChart(data);
 };
 
+//When the function fetchAllData() is called, then all data is pulled from
+//the database
 function fetchAllData() {
   refreshPage();
   fetch("http://localhost:5000/")
@@ -173,6 +178,7 @@ function refreshPage() {
   chartTimelineNode.appendChild(newApexChart);
 }
 
+//Function to hide the buttons
 function myHidingFunction() {
   var x = document.getElementById("morehd");
   if (x.style.display === "none") {
